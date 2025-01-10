@@ -94,8 +94,7 @@ class ResyClient(resyApi: ResyApi) extends Logging {
       case Success(bookingDetails) =>
         Success(bookingDetails)
       case _ =>
-        logger.info("Missed the shot!")
-        logger.info("""┻━┻ ︵ \(°□°)/ ︵ ┻━┻""")
+        logger.info("Missed the reservation!")
         logger.info(unknownErrorMsg)
         Failure(new RuntimeException(unknownErrorMsg))
     }

@@ -15,9 +15,7 @@ class ResyBookingWorkflow(resyClient: ResyClient, resDetails: ReservationDetails
 
   @tailrec
   private[this] def runnable(millisToRetry: Long, dateTimeStart: Long): Try[String] = {
-    logger.info("Taking the shot...")
-    logger.info("(҂‾ ▵‾)︻デ═一 (˚▽˚’!)/")
-    logger.info(s"Attempting to snipe reservation")
+    logger.info(s"Attempting to get reservation")
 
     val maybeConfigId = resyClient.findReservations(
       date         = resDetails.date,
